@@ -1,0 +1,15 @@
+version: "3"
+services: 
+
+    react:
+        build: 
+            context: ./environments/react
+        volumes:
+            - ./react/app:/usr/src/app
+        tty: true
+        working_dir: /usr/src/app
+        # command: sh -c "cd react-sample && yarn start"
+        command: sh -c "cd my-app && npm start"
+        ports:
+            - "8080:3000"
+            - "5001:5000"
